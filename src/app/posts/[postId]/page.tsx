@@ -4,6 +4,7 @@ import PostDescription from "../../common/PostDescription";
 import Comments from "@/app/common/Comments";
 import Container from '@mui/material/Container';
 import CssBaseline from '@mui/material/CssBaseline';
+
 type PostDetail = {
   userId: number;
   id: number;
@@ -21,7 +22,7 @@ const PostDetail = async ({ params }: { params: { postId: string } }) => {
         <title>{post?.title}</title>
       </Head>
       <main>
-      <Container maxWidth="sm">
+        <Container maxWidth="sm" style={{ marginTop: '20px' }}>
           <PostDescription key={post.id} data={post} />
           <Comments data={comments} />
         </Container>
