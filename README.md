@@ -44,8 +44,8 @@ Ensure you have the following installed on your machine:
    ```
    This command will install all the required dependencies listed in `package.json`.
 
-
-
+[IMPORTANT]
+Rename ".envexample" file into ".env.local" 
 
 ### Running the Development Server
 
