@@ -3,7 +3,7 @@ import { Typography, List, ListItem, ListItemText, Paper } from "@mui/material";
 import PostDescription from "../../common/PostDescription";
 import Comments from "@/app/common/Comments";
 import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
+const apiUrl = process.env.PUBLIC_API_URL;
 
 type PostDetail = {
   userId: number;
@@ -34,7 +34,7 @@ const PostDetail = async ({ params }: { params: { postId: string } }) => {
 async function getPost(postId: string) {
   try {
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/posts/${postId}`
+      `${apiUrl}/posts/${postId}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch posts");
@@ -48,7 +48,7 @@ async function getPost(postId: string) {
 async function getComments(postId: string) {
   try {
     const response = await fetch(
-      `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
+      `${apiUrl}/comments?postId=${postId}`
     );
     if (!response.ok) {
       throw new Error("Failed to fetch posts");
