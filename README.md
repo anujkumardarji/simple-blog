@@ -40,12 +40,11 @@ Ensure you have the following installed on your machine:
    If you're using yarn:
 
    ```bash
-   yarn
+   yarn install
    ```
    This command will install all the required dependencies listed in `package.json`.
 
-   [IMPORTANT]
-   Rename file ".envexample" to ".env.local" 
+
 
 
 ### Running the Development Server
