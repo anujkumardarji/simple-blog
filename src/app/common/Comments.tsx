@@ -1,5 +1,5 @@
 "use client";
-import { Typography, List, ListItem, ListItemText, Paper } from "@mui/material";
+import { List, ListItem, ListItemText, Paper } from "@mui/material";
 
 export default function Comments({ ...data }) {
   type CommentDetail = {
@@ -12,29 +12,31 @@ export default function Comments({ ...data }) {
 
   return (
     <>
-      <Typography variant="h6" gutterBottom>
-        Comments
-      </Typography>
+      <h3 style={{ marginBottom: '1rem' }}>Comments</h3>
       <Paper elevation={3} style={{ padding: "1rem" }}>
         <List>
           {data?.data?.map((comment: CommentDetail) => (
             <ListItem key={comment.id} alignItems="flex-start">
               <ListItemText
-                primary={<Typography variant="h5">{comment.name}</Typography>}
-                
+                primary={comment.name}
+                primaryTypographyProps={{
+                  component: 'h5',
+                  style: { marginBottom: '0.5rem' } // Example style
+                }}
                 secondary={
                   <>
-                   <Typography
-                      variant="body2"
-                      color="textPrimary"
-                    >
+                    <div style={{ marginBottom: '0.25rem' }}>
                       {comment.email}
-                    </Typography>
-                    <Typography variant="body2" >
+                    </div>
+                    <div>
                       {comment.body}
-                    </Typography>
+                    </div>
                   </>
                 }
+                secondaryTypographyProps={{
+                  component: 'div',
+                  style: { color: 'rgba(0, 0, 0, 0.54)' } // Example style
+                }}
               />
             </ListItem>
           ))}
