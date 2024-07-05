@@ -75,7 +75,7 @@ Once the development server is running, navigate to [http://localhost:3000](http
 - [React](https://reactjs.org/) - JavaScript library for building user interfaces
 - [Next.js](https://nextjs.org/) - React framework for production
 
-## Authors
+## Author
 
 - Anujkumar Darji (anujdarji1000@gmail.com)
 
