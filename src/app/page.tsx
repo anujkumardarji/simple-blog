@@ -24,7 +24,7 @@ const Home: React.FC<HomeProps> = async () => {
 
   return (
     <div className="container">
-      <main className="center-main" style={{ paddingTop: '20px' }}>
+      <main className="center-main" style={{  padding: '20px' }}>
         <ul> 
           <Grid container spacing={2} >
               {posts.map((post: Post) => (
