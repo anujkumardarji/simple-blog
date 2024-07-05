@@ -6,9 +6,15 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Box } from '@mui/material'; // Import necessary components
 
 export default function RowAndColumnSpacing({ ...data }) {
+  const truncateText = (text : string, maxLines : number) => {
+    const lines = text.split("\n"); 
+    if (lines.length > maxLines) {
+      return lines.slice(0, maxLines).join("\n") + "..."; 
+    }
+    return text;
+  };
   return (
     <>
       <CardContent>
@@ -19,9 +25,8 @@ export default function RowAndColumnSpacing({ ...data }) {
           {data.data.title}
         </Typography>
         <Typography variant="body2">
-          {data.data.body}
+        {truncateText(data.data.body, 3)} 
           <br />
-          {'"a benevolent smile"'}
         </Typography>
       </CardContent>
       <CardActions>
